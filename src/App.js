@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Numbers from './components/Numbers';
+import Operations from './components/Operations';
+import Result from './components/Result';
+import * as math from 'mathjs';
 
-function App() {
+const App = () => {
+  const [displayValue, setDisplayValue] = useState('');
+  const [result, setResult] = useState('');
+
+  const handleNumberClick = (number) => {
+    setDisplayValue(displayValue + number);
+  };
+
+  const handleOperatorClick = (operator) => {
+    setDisplayValue(displayValue + operator);
+  };
+
+  const handleEqualClick = () => {
+    try {
+      const calculatedResult = math.evaluate(displayValue);
+      setResult(calculatedResult.toString());
+    } catch (error) {
+      setResult('Error');
+    }
+  };
+
+  const handleClearClick = () => {
+    setDisplayValue('');
+    setResult('');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Simple Calculator</h1>
+      <div>
+        <input type="text" value={displayValue} disabled />
+      </div>
+      <Numbers 
+      handleNumberClick={handleNumberClick} 
+      />
+      <Operations
+        handleOperatorClick={handleOperatorClick}
+        handleEqualClick={handleEqualClick}
+        handleClearClick={handleClearClick}
+      />
+      <Result 
+      result={result} 
+      />
     </div>
   );
-}
+};
 
 export default App;
