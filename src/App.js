@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Numbers from './components/Numbers';
 import Operations from './components/Operations';
-import Result from './components/Result';
 import * as math from 'mathjs';
 
 const App = () => {
