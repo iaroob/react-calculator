@@ -20,6 +20,7 @@ const App = () => {
     try {
       const calculatedResult = math.evaluate(displayValue);
       setResult(calculatedResult.toString());
+      setDisplayValue(calculatedResult.toString());
     } catch (error) {
       setResult('Error');
     }
@@ -31,22 +32,25 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Simple Calculator</h1>
+    <div className="wrapper">
       <div>
+      <h1>Simple Calculator</h1>
+      <div className='display-wrapper'>
         <input type="text" value={displayValue} disabled />
       </div>
-      <Numbers 
-      handleNumberClick={handleNumberClick} 
-      />
-      <Operations
-        handleOperatorClick={handleOperatorClick}
-        handleEqualClick={handleEqualClick}
-        handleClearClick={handleClearClick}
-      />
-      <Result 
-      result={result} 
-      />
+      <div className='number-wrapper'>
+        <Numbers 
+        handleNumberClick={handleNumberClick} 
+        />
+      </div>
+      <div className='operations-wrapper'>
+        <Operations
+          handleOperatorClick={handleOperatorClick}
+          handleEqualClick={handleEqualClick}
+          handleClearClick={handleClearClick}
+        />
+      </div>
+      </div>
     </div>
   );
 };
