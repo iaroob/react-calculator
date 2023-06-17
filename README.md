@@ -1,3 +1,51 @@
+# React Calculator App
+
+This is a simple calculator application built using React. It allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
+
+## Demo
+A live demo of the app can be found [here](https://iaroob.github.io/react-calculator).
+
+## Features
+
+- Addition, subtraction, multiplication, and division operations
+- Clear button to reset the calculator
+- Responsive design for various screen sizes
+- Error handling for division by zero and invalid input
+
+## Technologies Used
+
+- React: JavaScript library for building user interfaces
+- HTML: Markup language for structuring the app
+- CSS: Styling the user interface
+- JavaScript: Programming language for app functionality
+
+## Installation
+
+1. Clone the repository:
+   ```shell
+   git clone https://github.com/iaroob/react-calculator.git
+   
+2. Navigate to the project directory:
+   ```shell
+   cd react-calculator
+
+3. Install the dependencies:
+    ```shell
+    npm install
+    
+4. Start the development server:
+    ```shell
+    npm start
+    
+5. Open the app in your browser:
+   ```shell
+   http://localhost:3000
+
+## Usage
+- Enter numbers and perform operations by clicking on the calculator buttons.
+- The result will be displayed in the output field.
+- Use the "Clear" button to clear the calculator.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
